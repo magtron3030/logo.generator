@@ -1,5 +1,5 @@
 const inquirer = require("inquirer");
-const {Circle, Triangle, Square} = require("../lib/shape");
+const {Circle, Triangle, Square} = require("./lib/shapes");
 const fs = require("fs")
 
 
@@ -13,18 +13,19 @@ const questions = () => inquirer.prompt([
    {
       type: "list",
       name: "shape",
-      message: "Choose which shape you would like for your SVG logo:"
+      message: "Choose which shape you would like for your SVG logo:",
+      choices: ["Circle", "Square", "Triangle"]
    },
 
    {
       type: "input",
-      name: "text",
+      name: "shapeColor",
       message: "Choose the color you would like for your SVG logo background:"
    },
 
    {
       type: "input",
-      name: "text",
+      name: "textColor",
       message: "Choose the color you would like for your SVG logo text:"
    },
   
@@ -46,21 +47,31 @@ const questions = () => inquirer.prompt([
             console.log("incorrect shape selection")
       }
 
-const result = `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"> 
-   ${shape.render()}
-   <text x="150" y="125" font-size="60" text-anchor="middle" fill=${textColor}">${text}</text>`
+const logo = `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"> 
+${shape.render()}
+<text x="150" y="125" font-size="60" text-anchor="middle" fill=${textColor}">${text}</text>
+</svg>`
+   
 
-   return(result)
+   return logo
 })
  
-function writeToFile(fileName, data) {
-   return fs.writeFileSync(fileName,data);
- }
+
+function writeToFile(fileName, data){
+   fs.writeFile(fileName, data, (err) => {
+      if (err) {
+      console.log(err)
+      } else {
+         console.log(`${fileName} saved at: ./${fileName}`)
+      }
+
+   })
+}
+ 
 
  function init() {
-   questions().then((responses) => {
-      console.log("generate logo svg")
-      writeToFile("logo svg", responses)
+   questions().then((logo) => {
+      writeToFile("logo.svg", logo)
    });
  }
 
