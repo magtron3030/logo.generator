@@ -49,7 +49,7 @@ const questions = () => inquirer.prompt([
 
 const logo = `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"> 
 ${shape.render()}
-<text x="150" y="125" font-size="60" text-anchor="middle" fill=${textColor}">${text}</text>
+<text x="110" y="125" font-size="60" text-anchor="middle" fill="${textColor}">${text}</text>
 </svg>`
    
 
@@ -62,7 +62,7 @@ function writeToFile(fileName, data){
       if (err) {
       console.log(err)
       } else {
-         console.log(`${fileName} saved at: ./${fileName}`)
+         console.log(`Your logo is saved at: ${fileName}`)
       }
 
    })
@@ -71,7 +71,7 @@ function writeToFile(fileName, data){
 
  function init() {
    questions().then((logo) => {
-      writeToFile("logo.svg", logo)
+      writeToFile("./generatedLogos/logo.svg", logo)
    });
  }
 
