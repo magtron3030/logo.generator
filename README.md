@@ -8,7 +8,7 @@ Open the terminal in the develope folder to get started. Once there, type in 'no
 
 
 ## Links
-https://github.com/magtron3030/readme.generator
+https://github.com/magtron3030/logo.generator
 
 https://drive.google.com/file/d/1d54hdsHYX2a6zGFgquyYqDXvBzgQRbqO/view
 
