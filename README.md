@@ -8,11 +8,13 @@ Open the terminal in the develope folder to get started. Once there, type in 'no
 
 
 ## Links
+[Github Link]
 https://github.com/magtron3030/logo.generator
 
+[Video Submission]
 https://drive.google.com/file/d/1d54hdsHYX2a6zGFgquyYqDXvBzgQRbqO/view
 
-
-
+[Sample File]
+http://127.0.0.1:5500/homework/logo.generator.hw/examples/logo.svg
 
 

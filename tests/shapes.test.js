@@ -1,4 +1,4 @@
-const shapes = require("./shapes")
+const shapes = require("../lib/shapes")
 
 describe("testing the shapes", () => {
    it("should return a yellow circle", () => {
